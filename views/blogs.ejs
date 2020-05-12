@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+<%- include("partials/heading") -%>
+
+<div class="myContent blog">
+
+    <%  theBlogs.forEach(function(blog){    %>
+    <div class="containter_post">
+        <h1><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
+        <% if(blog.body.length>100){         %>
+
+        <p>
+            <%= blog.body.substring(0, 101) + "... " %>
+            <a href="/blogs/<%= blog.title %>">
+                Read more
+            </a>
+        </p>
+
+
+        <% }else{       %>
+
+        <p><%= blog.body %></p>
+
+        <% }            %>
+
+    </div>
+    <%  });     %>
+</div>
+
+<%- include("partials/footer") -%>

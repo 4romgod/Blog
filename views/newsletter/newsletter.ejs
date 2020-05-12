@@ -1,0 +1,14 @@
+<%- include("../partials/header") -%>
+<%- include("../partials/heading") -%>
+
+<div class="content-newsletter">
+
+    <form class="form-signin " action="/newsletter" method="POST">
+        <input name="fname" type="text" class="form-control top" placeholder="First Name" required autofocus>
+        <input name="surname" type="text" class="form-control middle" placeholder="Surname" required autofocus>
+        <input name="email" type="email" class="form-control bottom" placeholder="Email Address" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    </form>
+</div>
+    
+<%- include("../partials/footer") -%>
