@@ -1,8 +1,9 @@
 <%- include("partials/header") -%>
 
 <div class="myContent blog">
-    <h1><%= theTitle %></h1>
-    <p><%= theBody %></p>
+    <h1 class="blog-title"><%= theBlog.title %></h1>
+    <p class="blog-date"><%= theBlog.date %></p>
+    <p class="blog-content"><%= theBlog.body %></p>
 </div>
 
 <%- include("partials/footer") -%>

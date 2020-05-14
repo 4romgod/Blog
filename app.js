@@ -6,6 +6,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
 const ejs = require("ejs");
+const mongoose = require("mongoose");
+const Blog = require("./database/Blog.js");
 
 // SETUP EXPRESS 
 const app = express();
@@ -14,9 +16,8 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 
-// The data. Will be replaced with database
-let blogs = require("./data");
-
+// SETUP DATA
+mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // set routes
 const pages = require("./routes/pages.js");
@@ -47,7 +48,7 @@ app.post("/newsletter", function (req, res) {
 
   const options = {
     method: "POST",
-    auth: "4romgod:"+process.env.API_KEY
+    auth: "4romgod:" + process.env.API_KEY
   }
 
   const requestApi = https.request(url, options, function (responseApi) {
@@ -87,11 +88,14 @@ app.post("/retry", function (req, res) {
 
 // POSTING A JOURNAL
 app.post("/compose", function (req, res) {
-  const blog = {
-      title: req.body.blogTitle,
-      body: req.body.blogBody
-  };
-  blogs.push(blog);
+  const date = require("./util/date");
+
+  const blog = new Blog({
+    date: date.getDate(),
+    title: req.body.blogTitle,
+    body: req.body.blogBody
+  });
+  blog.save();
 
   res.redirect("/blogs");
 });

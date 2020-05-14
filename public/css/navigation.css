@@ -1,7 +1,7 @@
 /************************************* NAVIGATION ******************************/
 
 .navbar {
-    background-color: #959899;
+    background-color: #64a1b6;
     padding: 0 50px;
 }
 
@@ -34,7 +34,7 @@
     width: 100%;
     height: 10%;
     /*margin-top: -60px;*/
-    background-color: #959899;
+    background-color: #64a1b6;
 }
 
 .footer p {
