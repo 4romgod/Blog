@@ -3,8 +3,86 @@
 
 
 <div class="myContent contact">
-    <h1>Contacts</h1>
-    <p><%= theContent %></p>
+    <!-- Contact Us Section -->
+    <section class="">
+        <div class="container">
+
+            <div class="row">
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mt-3" style="margin-bottom: 30px;">
+                    <!-- Section Titile -->
+                    <div class="">
+                        <h1 class="section-title">Love to Hear From You</h1>
+                    </div>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using Content.</p>
+
+                    <div class="">
+                        Address: <a href="#">120 Kloof Street, Cape Town</a>
+                    </div>
+                    <div class="">
+                        Phone: <a href="#">+27(0) 63 289 9004</a>
+                    </div>
+                    <div class="">
+                        Website: <a href="https://4romgod.github.io/cv2/">https://4romgod.github.io/cv2/</a>
+                    </div>
+                </div>
+
+                <!-- contact form -->
+                <div class="col-md-6" style="margin-top: 25px;">
+
+                    <form class="" action="/message" method="post" data-toggle="validator">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label class="control-label" for="name">Name</label>
+                            <input class="form-control" id="name" type="text" name="name" required
+                                data-error="Please enter your name">
+                            <div class=""></div>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" name="email" required
+                                data-error="Please enter your Email">
+                            <div class=""></div>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group">
+                            <label class="control-label">Subject</label>
+                            <input class="form-control" id="" type="text" name="subject" required
+                                data-error="Please enter your message subject">
+                            <div class=""></div>
+                        </div>
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label class="control-label">Message</label>
+                            <textarea class="form-control" rows="3" id="message" name="message" required
+                                data-error="Write your message"></textarea>
+                            <div class=""></div>
+                        </div>
+                        <!-- Form Submit -->
+                        <div class="form-submit">
+                            <button class="btn btn-primary" type="submit" id="form-submit">Send Message</button>
+                            <div id="" class=""></div>
+                            <div class=""></div>
+                        </div>
+                        
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </div>
+
 
 <%- include("partials/footer") -%>

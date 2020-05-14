@@ -15,14 +15,19 @@
             <a href="/blogs/<%= blog.title %>">
                 Read more
             </a>
-            <br>
-            <hr>
         </p>
         <% }else{       %>
 
         <p><%= blog.body %></p>
 
         <% }            %>
+
+        <!-- section for comments and likes -->
+        <div class="section-comments">
+            <p class="comment">Comments</p>
+            <p class="like">Likes</p>
+        </div>
+        <hr>
 
     </div>
     <%  });     %>

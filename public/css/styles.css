@@ -11,10 +11,17 @@ p{
     min-height: 90%;
 }
 
+
 .myContent{     /*holds main content*/
     padding: 50px 15%;
 }
 
+/* X-SMALL SCREENS */
+@media only screen and (max-width: 370px) {
+    .myContent{     /*holds main content*/
+        padding: 50px 5%;
+    }
+}
 
 
 /**************************** blogs ******************************/
@@ -33,6 +40,24 @@ p{
 }
 
 .blog-content{}
+
+
+/************** Section comments *****************/
+.section-comments{
+    background-color: greenyellow;
+    margin-top: 15px;
+}
+
+.comment{
+    display: inline;
+}
+
+.like{
+    display: inline;
+}
+
+
+
 
 
 

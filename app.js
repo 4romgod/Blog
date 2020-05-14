@@ -8,6 +8,11 @@ const https = require("https");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const Blog = require("./database/Blog.js");
+const nodemailer = require('nodemailer');
+const settings = require("./settings");
+
+//console.log(settings.PROJECT_ROOT);
+
 
 // SETUP EXPRESS 
 const app = express();
@@ -16,8 +21,11 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 
-// SETUP DATA
-mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', {useNewUrlParser: true, useUnifiedTopology: true});
+
+// SETUP DATABASE
+mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(()=> console.log("You are connected to MongoDB"))
+  .catch(()=> console.log("Connection error with MongoDB"));
 
 // set routes
 const pages = require("./routes/pages.js");
@@ -86,19 +94,58 @@ app.post("/retry", function (req, res) {
 });
 
 
-// POSTING A JOURNAL
-app.post("/compose", function (req, res) {
-  const date = require("./util/date");
 
-  const blog = new Blog({
-    date: date.getDate(),
-    title: req.body.blogTitle,
-    body: req.body.blogBody
+// SEND A MESSAGE
+app.post("/message", function (req, res) {
+  const name = req.body.name;
+  const email = req.body.email;
+  const subject = req.body.subject;
+  const message = req.body.message;
+  
+  const output = `
+    <p>You have a new contact request</p>
+    <h3>Contact details</h3>
+    <ul>
+      <li>Name: ${name}</li>
+      <li>Email: ${email}</li>
+      <li>Subject: ${subject}</li>
+    </ul>
+    <h3>Message</h3>
+    <p>${message}</p>
+  `
+
+  // Use Smtp Protocol to send Email
+  const smtpTransport = nodemailer.createTransport({
+    service: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "4romgod@gmail.com",
+      pass: "AdonaiGodI$TheMa$ter365"
+    }
   });
-  blog.save();
 
-  res.redirect("/blogs");
+  const mailOptions = {
+    from: "4romgod@gmail.com",
+    to: "ebenezermathebula@gmail.com",
+    subject: "Send Email Using Node.js",
+    text: "Node.js New world for me",
+    html: output
+  }
+
+  smtpTransport.sendMail(mailOptions, function (error, response) {
+    if (error) {
+      console.log(error);
+    } 
+    else {
+      console.log("Message sent: " + response.message);
+    }
+
+    smtpTransport.close();
+  });
+
 });
+
 
 
 // START THE SERVER
