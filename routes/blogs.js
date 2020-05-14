@@ -5,13 +5,8 @@ const _ = require("lodash");
 
 // GOLBAL VARIABLES
 
-let blogs = [
-    {
-        title: "Just a Title",
-        body: "proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing."
-    }
-];
-
+// The data. Will be replaced with database
+let blogs = require("../data");
 
 // GET ALL PAGE
 router.get("/", function (req, res) {

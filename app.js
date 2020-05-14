@@ -14,24 +14,16 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 
+// The data. Will be replaced with database
+let blogs = require("./data");
+
+
 // set routes
 const pages = require("./routes/pages.js");
 const blogsPages = require("./routes/blogs.js");
 
 app.use(pages);
 app.use("/blogs", blogsPages);
-
-
-// POSTING A JOURNAL
-app.post("/compose", function (req, res) {
-  const blog = {
-    title: req.body.blogTitle,
-    body: req.body.blogBody
-  };
-  blogs.push(blog);
-
-  res.redirect("/blogs");
-});
 
 
 // POST OF SIGNIN DETAILS
@@ -92,6 +84,17 @@ app.post("/retry", function (req, res) {
   res.redirect("/newsletter");
 });
 
+
+// POSTING A JOURNAL
+app.post("/compose", function (req, res) {
+  const blog = {
+      title: req.body.blogTitle,
+      body: req.body.blogBody
+  };
+  blogs.push(blog);
+
+  res.redirect("/blogs");
+});
 
 
 // START THE SERVER

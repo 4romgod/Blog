@@ -5,17 +5,19 @@
 
     <%  theBlogs.forEach(function(blog){    %>
     <div class="containter_post">
-        <h1><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
+        <h1 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
+        <p class="blog-date"><%= blog.date %></p>
+        
+        <!--reduce the size of the blog text-->
         <% if(blog.body.length>100){         %>
-
-        <p>
+        <p class="blog-content">
             <%= blog.body.substring(0, 101) + "... " %>
             <a href="/blogs/<%= blog.title %>">
                 Read more
             </a>
+            <br>
+            <hr>
         </p>
-
-
         <% }else{       %>
 
         <p><%= blog.body %></p>
@@ -24,6 +26,7 @@
 
     </div>
     <%  });     %>
+
 </div>
 
 <%- include("partials/footer") -%>
