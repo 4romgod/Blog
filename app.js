@@ -7,11 +7,8 @@ const bodyParser = require("body-parser");
 const https = require("https");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const Blog = require("./database/Blog.js");
 const nodemailer = require('nodemailer');
 const settings = require("./settings");
-
-//console.log(settings.PROJECT_ROOT);
 
 
 // SETUP EXPRESS 
@@ -21,15 +18,19 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 
+// MODELS
+const Blog = require("./database/Blog.js");
+const Comment = require("./database/Comment.js");
 
 // SETUP DATABASE
 mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(()=> console.log("You are connected to MongoDB"))
-  .catch(()=> console.log("Connection error with MongoDB"));
+.then(()=> console.log("You are connected to MongoDB"))
+.catch(()=> console.log("Connection error with MongoDB"));
 
-// set routes
-const pages = require("./routes/pages.js");
-const blogsPages = require("./routes/blogs.js");
+
+// SET ROUTES
+const pages = require("./routes/RoutesPages");
+const blogsPages = require("./routes/RoutesBlogs");
 
 app.use(pages);
 app.use("/blogs", blogsPages);
@@ -88,11 +89,11 @@ app.post("/newsletter", function (req, res) {
 
 });
 
+
 // POST RETRY SIGNUP
 app.post("/retry", function (req, res) {
   res.redirect("/newsletter");
 });
-
 
 
 // SEND A MESSAGE
@@ -145,7 +146,6 @@ app.post("/message", function (req, res) {
   });
 
 });
-
 
 
 // START THE SERVER

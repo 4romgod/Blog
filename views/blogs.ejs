@@ -8,7 +8,7 @@
         <h1 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
         <p class="blog-date"><%= blog.date %></p>
         
-        <!--reduce the size of the blog text-->
+        <!-- Reduce the size of the blog text-->
         <% if(blog.body.length>100){         %>
         <p class="blog-content">
             <%= blog.body.substring(0, 101) + "... " %>
@@ -22,10 +22,9 @@
 
         <% }            %>
 
-        <!-- section for comments and likes -->
+        <!-- Section for Comments and Likes -->
         <div class="section-comments">
-            <p class="comment">Comments</p>
-            <p class="like">Likes</p>
+            <p class="comment">Comments num</p>
         </div>
         <hr>
 

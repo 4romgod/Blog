@@ -1,11 +1,29 @@
 <%- include("partials/header") -%>
-
 <%- include("partials/heading") -%>
 
 <div class="myContent blog">
     <h1 class="blog-title"><%= theBlog.title %></h1>
     <p class="blog-date"><%= theBlog.date %></p>
     <p class="blog-content"><%= theBlog.body %></p>
+
+    <form id="write-comment" class="form-group" action="/comment" method="POST" style="margin-top: 30px;">
+        <textarea class="form-control" rows="3" id="comment" name="comment" required data-error="Write your message"
+            placeholder="Comment...">
+        </textarea>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+    </form>
+
+    <div class="container-comment" style="margin-top: 20px; border: solid black 1px;">
+        <p>Author</p>
+        <p>Date</p>
+        <p>Body</p>
+    </div>
+
+
+
+
+
 </div>
 
 <%- include("partials/footer") -%>

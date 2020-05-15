@@ -6,10 +6,9 @@
     <form action="/blogs/compose" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="blogTitle">Title</label>
-            <input name="blogTitle" id="blogTitle" class="form-control" type="text" placeholder="Enter text">
+            <input name="blogTitle" id="blogTitle" class="form-control" type="text" placeholder="Enter A Title" required data-error="Please enter your Email">
             <label for="blogBody" style="margin-top: 30px;">Message</label>
-            <textarea name="blogBody" id="blogBody" class="form-control" cols="30" rows="10" placeholder="Message"
-                class="col-12"></textarea>
+            <textarea name="blogBody" id="blogBody" class="form-control" cols="30" rows="10" placeholder="Enter the Message" required data-error="Please enter your Email" class="col-12"></textarea>
             
                 <!-- Upload an image -->
             <input name="blogImage" id="blogImage" class="form-control" type="file">
