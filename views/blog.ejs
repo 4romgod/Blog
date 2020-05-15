@@ -1,29 +1,102 @@
 <%- include("partials/header") -%>
 <%- include("partials/heading") -%>
 
+<style>
+    #section-bottom{
+        margin-top: 50px;
+    }
+
+    .author-img {
+        border-radius: 50%;
+        width: 100px;
+    }
+
+    .author-name {
+    }
+
+    .a-comment{
+        background-color: rgb(248, 245, 245);
+        border: solid rgb(245, 243, 243) 1px;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .comment-author{
+        float: left;
+        margin-right: 50px;
+    }
+
+    .comment-body{
+        color: grey;
+        font-size: 0.8rem;
+    }
+</style>
+
 <div class="myContent blog">
-    <h1 class="blog-title"><%= theBlog.title %></h1>
-    <p class="blog-date"><%= theBlog.date %></p>
-    <p class="blog-content"><%= theBlog.body %></p>
 
-    <form id="write-comment" class="form-group" action="/comment" method="POST" style="margin-top: 30px;">
-        <textarea class="form-control" rows="3" id="comment" name="comment" required data-error="Write your message"
-            placeholder="Comment...">
-        </textarea>
-
-        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
-    </form>
-
-    <div class="container-comment" style="margin-top: 20px; border: solid black 1px;">
-        <p>Author</p>
-        <p>Date</p>
-        <p>Body</p>
+    <!-- the blog content -->
+    <div class="the-blog">
+        <h1 class="blog-title"><%= theBlog.title %></h1>
+        <p class="blog-date"><%= theBlog.date %></p>
+        <p class="blog-content"><%= theBlog.body %></p>
     </div>
+    <br>
+    <hr>
 
+    <section id="section-bottom">
 
+        <!-- about the author -->
+        <div class="the-author">
+            <p style="font-size: 1.5rem;">About the Author:</p>
+            <img class="author-img mt-10" src="../images/Kev.jpg" alt="">
+            <p class="author-name mt-10 fw-b">Ebenezer Mathebula</p>
+            <p class="author-bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus animi quos qui,
+                similique
+                maiores exercitationem possimus quas eius.</p>
+        </div>
 
+        <!-- add a new comment -->
+        <p class="mt-30 fw-b">Add comment</p>
+        <hr>
+        <div class="add-comment container-fluid">
 
+            <form id="write-comment" class="form-group row" action="/comment" method="POST">
+
+                <div class="col-md-6 mt-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+
+                <div class="col-md-6 mt-10">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+
+                <div class="col-md-12 mt-10">
+                    <textarea class="form-control" rows="3" placeholder="Comment..." id="comment" name="comment"
+                        required data-error="Write your message"></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary mt-10" name="blogTitle" value= <%= theBlog.title %> >Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- old comments -->
+        <p class="mt-30 fw-b">Comments</p>
+        <hr>
+        <% for(let i=0; i<5; i++){      %>
+        <div class="container-fluid mt-20">
+            <div class="a-comment">
+                <p class="comment-author fw-b">Dexter Morgan</p>
+                <p class="comment-date">15-05-2020</p>
+                <p class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quae nisi perferendis iste excepturi velit fuga consequuntur omnis cum, dolore aliquid, quibusdam nobis. Nesciunt dolorum quis sed voluptates dolor error?</p>
+            </div>
+        </div>
+        <%}     %>
+
+    </section>
 
 </div>
+
 
 <%- include("partials/footer") -%>

@@ -8,7 +8,6 @@ const https = require("https");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const nodemailer = require('nodemailer');
-const settings = require("./settings");
 
 
 // SETUP EXPRESS 
@@ -144,6 +143,29 @@ app.post("/message", function (req, res) {
 
     smtpTransport.close();
   });
+
+});
+
+
+// POSTING A COMMENT
+app.post("/comment", function(req, res){
+  const authorName = req.body.name;
+  const authorEmail = req.body.email;
+  const theComment = req.body.comment;
+  const blogTitle = req.body.blogTitle;
+  console.log(blogTitle);
+
+  const comment = new Comment({
+    author: authorName,
+    email: authorEmail,
+    date: "5/15/2025",
+    body: theComment,
+    blogTitle: blogTitle
+  });
+
+  comment.save();
+
+  res.redirect("/blogs/"+blogTitle);
 
 });
 

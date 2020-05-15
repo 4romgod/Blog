@@ -34,29 +34,12 @@ router.get("/:blogName", function (req, res) {
     const reqTitle = (req.params.blogName);
     console.log("Requested Title: " + reqTitle);
 
-
-    //const comments = require("../comments.js");
-    /*const comments = [
-        {
-            author: "Ebenezer",
-            date: "12 May 2015",
-            body: "This is a comment"
-        },
-        {
-            author: "Ebay",
-            date: "15 May 2015",
-            body: "This is yet another comment"
-        }
-    ];*/
-
-    const comments = [1,2,3,4,5];
-
     
     // GET THE REQ BLOG FROM MONGODB
     Blog.find({title: reqTitle}, function(err, blog){
         if(err){
             console.log("Blog Does not exits");
-            res.render("blog",  {theComments: comments, theBlog: {date:"", title:"Blog not found", body:""} });
+            res.render("blog", {theBlog: {date:"", title:"Blog not found", body:""} });
         }
         else if(blog){
             res.render("blog", {
@@ -112,8 +95,6 @@ router.post("/compose", function (req, res) {
   
     //res.redirect("/blogs");
 });
-
-
 
   
 
