@@ -10,22 +10,34 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 
 // GET THE HOME PAGE
 router.get("/", function (req, res) {
-    res.render("home", { theContent: homeStartingContent, imgHeading: "../images/Kev.jpg", theHeading: "Home" });
+    const heading = "Welcome to my Blog";
+    const headingImg = "../images/Kev.jpg"
+
+    res.render("home", { theContent: homeStartingContent, imgHeading: headingImg, theHeading: heading });
 });
 
 // GET THE ABOUT PAGE
 router.get("/about", function (req, res) {
-    res.render("about", { theContent: aboutContent, imgHeading: "../images/Kev.jpg", theHeading: "About Me" });
+    const heading = "About Me";
+    const headingImg = "../images/boxing.jpg";
+
+    res.render("about", { theContent: aboutContent, imgHeading: headingImg, theHeading: heading });
 });
 
 // GET THE CONTACT PAGE
 router.get("/contact", function (req, res) {
-    res.render("contact", { theContent: contactContent, imgHeading: "../images/Kev.jpg", theHeading: "Contact Me" });
+    const heading = "";
+    const headingImg = "../images/contact-me.jpg";
+
+    res.render("contact", { theContent: contactContent, imgHeading: headingImg, theHeading: heading });
 });
 
 // GET THE NEWSLETTER PAGE
 router.get("/newsletter", function (req, res) {
-    res.render("newsletter/newsletter", { imgHeading: "../images/bad\ fish.png", theHeading: "Newsletter" });
+    const heading = "Sign Up to my Newsletter";
+    const headingImg = "../images/newsletter.jpg";
+
+    res.render("newsletter/newsletter", { imgHeading: headingImg, theHeading: heading });
 });
 
 

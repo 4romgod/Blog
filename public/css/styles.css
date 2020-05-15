@@ -24,43 +24,6 @@ p{
 }
 
 
-/**************************** blogs ******************************/
-
-
-/************************ single blog ****************************/
-.containter_post{
-    margin-bottom: 40px;
-}
-
-.blog-title{}
-
-.blog-date{
-    color: gray;
-    margin-bottom: 10px;
-}
-
-.blog-content{}
-
-
-/************** Section comments *****************/
-.section-comments{
-    background-color: greenyellow;
-    margin-top: 15px;
-}
-
-.comment{
-    display: inline;
-}
-
-.like{
-    display: inline;
-}
-
-
-
-
-
-
 /*************************** newsletter ************************/
 .content-newsletter{
     display: -ms-flexbox;

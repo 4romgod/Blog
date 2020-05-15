@@ -63,11 +63,11 @@
             <form id="write-comment" class="form-group row" action="/comment" method="POST">
 
                 <div class="col-md-6 mt-10">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required data-error="Write your Name">
                 </div>
 
                 <div class="col-md-6 mt-10">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required data-error="Write your Email">
                 </div>
 
                 <div class="col-md-12 mt-10">
@@ -83,18 +83,19 @@
 
         <!-- old comments -->
         <p class="mt-30 fw-b">Comments</p>
-        <hr>
-
-        <% theBlog.comments.forEach(function(comment){      %>
-            <div class="container-fluid mt-20">
-                <div class="a-comment">
-                    <p class="comment-author fw-b"><%= comment.author %></p>
+        <section id="all-comments">
+            <hr>
+            <% theBlog.comments.forEach(function(comment){      %>
+                <div class="container-fluid mt-20">
+                    <div class="a-comment">
+                        <p class="comment-author fw-b"><%= comment.author %></p>
                     <p class="comment-date"><%= comment.date %></p>
                     <p class="comment-body"><%= comment.body %></p>
                 </div>
             </div>
-        <%  });     %>
-        
+            <%  });     %>
+        </section>
+            
     </section>
     
 </div>

@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Blog = require("../database/Blog.js");
 const fileUpload = require("express-fileupload");
 const settings = require("../settings");
+const theDate = require("../util/date");
 
 router.use(fileUpload());
 
@@ -15,14 +16,17 @@ router.use(fileUpload());
 
 // GET ALL BLOGS POSTS
 router.get("/", function (req, res) {
+    const heading = "Blog";
+    const headingImg = "../images/typing.jpg";
+
     Blog.find(function(err, allBlogs){
         if(err){
             console.log(err);
-            res.render("blogs", { theBlogs: [], imgHeading: "../images/typing.jpg", theHeading: "Blog" });
+            res.render("blogs", { theBlogs: [], imgHeading: headingImg, theHeading: heading });
         }
         else{
             let blogs = allBlogs;
-            res.render("blogs", { theBlogs: blogs, imgHeading: "../images/typing.jpg", theHeading: "Blog" });
+            res.render("blogs", { theBlogs: blogs, imgHeading: headingImg, theHeading: heading });
         }
         
     });
@@ -30,10 +34,12 @@ router.get("/", function (req, res) {
 
 // GET A SINGLE BLOG POST
 router.get("/:blogName", function (req, res) {
-   //const reqTitle = _.lowerCase(req.params.blogName);
+    //const reqTitle = _.kebabCase(req.params.blogName);
     const reqTitle = (req.params.blogName);
     console.log("Requested Title: " + reqTitle);
 
+    const heading = "";
+    const headingImg = "";
     
     // GET THE REQ BLOG FROM MONGODB
     Blog.find({title: reqTitle}, function(err, blog){
@@ -42,9 +48,11 @@ router.get("/:blogName", function (req, res) {
             res.render("blog", {theBlog: {date:"", title:"Blog not found", body:""} });
         }
         else if(blog){
+            //headingImg = blog[0].image;
+
             res.render("blog", {
                 theBlog: blog[0],
-                theHeading: "",
+                theHeading: heading,
                 imgHeading: blog[0].image
                 }
             );
@@ -62,7 +70,6 @@ router.get("/:blogName", function (req, res) {
 
 // POSTING A BLOG
 router.post("/compose", function (req, res) {
-    const date = require("../util/date");
 
     if(req.files){ 
         console.log("File Uploaded Successfully!");      
@@ -78,7 +85,7 @@ router.post("/compose", function (req, res) {
             else{
                 console.log("File saved successfully");
                 const blog = new Blog({
-                    date: date.getDate(),
+                    date: theDate,
                     title: req.body.blogTitle,
                     body: req.body.blogBody,
                     image: "../images/uploads/"+imageName

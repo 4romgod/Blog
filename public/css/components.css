@@ -3,6 +3,7 @@
     background-color: grey;
 }
 
+/* margin top values*/
 .mt-10{margin-top: 10px;}
 
 .mt-20{margin-top: 20px;}
@@ -10,3 +11,22 @@
 .mt-30{margin-top: 30px;}
 
 .fw-b{font-weight: bold;}
+
+/* background color, primary, primary-dark, accent, black, white */
+.bg-p{background-color: #5497e2;}
+
+.bg-pd{background-color: #03438b;}
+
+.bg-b{background-color: black;}
+
+.bg-w{background-color: white;}
+
+/* color, primary, primary-dark, accent, black, white */
+.cl-p{color: #5497e2;}
+
+.cl-pd{color: #03438b;}
+
+.cl-b{color: black;}
+
+.cl-w{color: white;}
+

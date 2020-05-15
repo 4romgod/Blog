@@ -1,6 +1,35 @@
 <%- include("partials/header") -%>
 <%- include("partials/heading") -%>
 
+<style>
+/******** single blog **********/
+.containter_post{
+    margin-bottom: 40px;
+}
+
+.blog-title{}
+
+.blog-date{
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.blog-content{}
+
+
+/****** comment ********/
+.section-comments{
+    background-color: greenyellow;
+    display: inline-block;
+}
+
+.comment{ 
+    display: inline;
+}
+
+</style>
+
+
 <div class="myContent blog">
 
     <%  theBlogs.forEach(function(blog){    %>
@@ -23,8 +52,9 @@
         <% }            %>
 
         <!-- Section for Comments and Likes -->
-        <div class="section-comments">
-            <p class="comment">Comments num</p>
+        <div class="section-comments mt-20">
+            <p class="comment">Comments</p>
+            <p class="quantity">number</p>
         </div>
         <hr>
 
