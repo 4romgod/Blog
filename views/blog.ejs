@@ -84,18 +84,19 @@
         <!-- old comments -->
         <p class="mt-30 fw-b">Comments</p>
         <hr>
-        <% for(let i=0; i<5; i++){      %>
-        <div class="container-fluid mt-20">
-            <div class="a-comment">
-                <p class="comment-author fw-b">Dexter Morgan</p>
-                <p class="comment-date">15-05-2020</p>
-                <p class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quae nisi perferendis iste excepturi velit fuga consequuntur omnis cum, dolore aliquid, quibusdam nobis. Nesciunt dolorum quis sed voluptates dolor error?</p>
+
+        <% theBlog.comments.forEach(function(comment){      %>
+            <div class="container-fluid mt-20">
+                <div class="a-comment">
+                    <p class="comment-author fw-b"><%= comment.author %></p>
+                    <p class="comment-date"><%= comment.date %></p>
+                    <p class="comment-body"><%= comment.body %></p>
+                </div>
             </div>
-        </div>
-        <%}     %>
-
+        <%  });     %>
+        
     </section>
-
+    
 </div>
 
 

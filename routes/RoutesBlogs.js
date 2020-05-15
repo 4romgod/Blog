@@ -96,6 +96,4 @@ router.post("/compose", function (req, res) {
     //res.redirect("/blogs");
 });
 
-  
-
 module.exports = router;

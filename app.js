@@ -8,6 +8,7 @@ const https = require("https");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const nodemailer = require('nodemailer');
+const theDate = require("./util/date");
 
 
 // SETUP EXPRESS 
@@ -19,12 +20,11 @@ app.set('view engine', 'ejs');
 
 // MODELS
 const Blog = require("./database/Blog.js");
-const Comment = require("./database/Comment.js");
 
 // SETUP DATABASE
 mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', { useNewUrlParser: true, useUnifiedTopology: true })
-.then(()=> console.log("You are connected to MongoDB"))
-.catch(()=> console.log("Connection error with MongoDB"));
+  .then(() => console.log("You are connected to MongoDB"))
+  .catch(() => console.log("Connection error with MongoDB"));
 
 
 // SET ROUTES
@@ -101,7 +101,7 @@ app.post("/message", function (req, res) {
   const email = req.body.email;
   const subject = req.body.subject;
   const message = req.body.message;
-  
+
   const output = `
     <p>You have a new contact request</p>
     <h3>Contact details</h3>
@@ -136,7 +136,7 @@ app.post("/message", function (req, res) {
   smtpTransport.sendMail(mailOptions, function (error, response) {
     if (error) {
       console.log(error);
-    } 
+    }
     else {
       console.log("Message sent: " + response.message);
     }
@@ -148,25 +148,32 @@ app.post("/message", function (req, res) {
 
 
 // POSTING A COMMENT
-app.post("/comment", function(req, res){
+app.post("/comment", function (req, res) {
   const authorName = req.body.name;
   const authorEmail = req.body.email;
   const theComment = req.body.comment;
   const blogTitle = req.body.blogTitle;
   console.log(blogTitle);
 
-  const comment = new Comment({
+  const comment = {
     author: authorName,
     email: authorEmail,
-    date: "5/15/2025",
+    date: theDate,
     body: theComment,
-    blogTitle: blogTitle
-  });
+  };
 
-  comment.save();
+  Blog.updateOne({ title: blogTitle },
+    {
+      $push: { comments: comment }
+    },
+    function (error, success) {
+      if (error) {console.log(error);} 
+      else {console.log(success);}
+    }
+  );
 
-  res.redirect("/blogs/"+blogTitle);
-
+  //find better way to refresh page with comment rendered
+  res.redirect("/blogs/" + blogTitle);
 });
 
 
