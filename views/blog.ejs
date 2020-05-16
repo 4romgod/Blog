@@ -85,6 +85,11 @@
         <p class="mt-30 fw-b">Comments</p>
         <section id="all-comments">
             <hr>
+            
+            <% if(theBlog.comments.length <=0){     %>
+                <h4>No Comments Posted!</h4>
+            <%  }else{   %>  
+
             <% theBlog.comments.forEach(function(comment){      %>
                 <div class="container-fluid mt-20">
                     <div class="a-comment">
@@ -93,7 +98,10 @@
                     <p class="comment-body"><%= comment.body %></p>
                 </div>
             </div>
-            <%  });     %>
+            <%  });     %>      <!-- end loop -->
+
+            <% } %>     <!-- end else -->
+            
         </section>
             
     </section>

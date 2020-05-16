@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const _ = require("lodash");
-const mongoose = require("mongoose");
 const Blog = require("../database/Blog.js");
 const fileUpload = require("express-fileupload");
 const settings = require("../settings");

@@ -32,6 +32,10 @@
 
 <div class="myContent blog">
 
+    <% if(theBlogs.length <=0){     %>
+        <h1>No Blogs Posted!</h1>
+    <%  }else{   %>     
+
     <%  theBlogs.forEach(function(blog){    %>
     <div class="containter_post">
         <h1 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
@@ -59,7 +63,9 @@
         <hr>
 
     </div>
-    <%  });     %>
+    <%  });     %>      <!-- end loop -->
+
+    <% } %>     <!-- end else -->
 
 </div>
 
