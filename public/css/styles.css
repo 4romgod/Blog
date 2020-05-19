@@ -69,3 +69,9 @@ p{margin: 0;}
     border-top-right-radius: 0;
 }
 
+
+/*************************** contact ************************/
+.line-seperator{
+    border-left: 1px  solid rgb(54, 53, 53);
+    margin: 0 12px 0 5px;
+}

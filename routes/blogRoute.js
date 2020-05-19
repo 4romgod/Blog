@@ -26,7 +26,7 @@ router.get("/", function (req, res) {
                 res.render("blogs", { theBlogs: [], imgHeading: headingImg, theHeading: heading });
             }
             else {
-                let blogs = allBlogs;
+                let blogs = allBlogs.reverse();
                 res.render("blogs", { theBlogs: blogs, imgHeading: headingImg, theHeading: heading });
             }
 
