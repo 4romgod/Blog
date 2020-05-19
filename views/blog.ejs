@@ -2,7 +2,9 @@
 <%- include("partials/heading") -%>
 
 <style>
-    #section-bottom{margin-top: 50px;}
+    #section-bottom {
+        margin-top: 50px;
+    }
 
     .author-img {
         border-radius: 50%;
@@ -11,20 +13,20 @@
 
     .author-name {}
 
-    .a-comment{
+    .a-comment {
         background-color: rgb(248, 245, 245);
         border: solid rgb(245, 243, 243) 1px;
         border-radius: 5px;
         padding: 20px;
     }
 
-    .comment-author{
+    .comment-author {
         float: left;
         margin-right: 50px;
     }
 
-    .comment-body{
-        color: grey;
+    .comment-body {
+        color: rgb(41, 40, 40);
         font-size: 0.8rem;
     }
 </style>
@@ -60,11 +62,13 @@
             <form id="write-comment" class="form-group row" action="/comment" method="POST">
 
                 <div class="col-md-6 mt-10">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required data-error="Write your Name">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required
+                        data-error="Write your Name">
                 </div>
 
                 <div class="col-md-6 mt-10">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required data-error="Write your Email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required
+                        data-error="Write your Email">
                 </div>
 
                 <div class="col-md-12 mt-10">
@@ -73,7 +77,8 @@
                 </div>
 
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-lg mt-10" name="blogTitle" value= "<%= theBlog.title %>"  style="width: 25%;">Submit</button>
+                    <button type="submit" class="btn btn-lg mt-10" name="blogTitle" value="<%= theBlog.title %>"
+                        style="width: 25%;">Submit</button>
                 </div>
             </form>
         </div>
@@ -82,27 +87,30 @@
         <p class="mt-30 fw-b">Comments</p>
         <section id="all-comments">
             <hr>
-            
+
             <% if(theBlog.comments.length <=0){     %>
-                <h4>No Comments Posted!</h4>
-            <%  }else{   %>  
+            <h4>No Comments Posted!</h4>
+            <%  }else{   %>
 
             <% theBlog.comments.forEach(function(comment){      %>
-                <div class="container-fluid">
-                    <div class="a-comment">
-                        <p class="comment-author fw-b"><%= comment.author %></p>
+            <div class="container-fluid">
+                <div class="a-comment">
+                    <p class="comment-author fw-b"><%= comment.author %></p>
                     <p class="comment-date"><%= comment.date %></p>
                     <p class="comment-body"><%= comment.body %></p>
                 </div>
             </div>
-            <%  });     %>      <!-- end loop -->
+            <br>
+            <%  });     %>
+            <!-- end loop -->
 
-            <% } %>     <!-- end else -->
-            
+            <% } %>
+            <!-- end else -->
+
         </section>
-            
+
     </section>
-    
+
 </div>
 
 
