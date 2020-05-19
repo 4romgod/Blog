@@ -1,0 +1,25 @@
+most recent blog goes at the top
+-------------------------------------------
+
+add images to the blogs
+-------------------------------------------
+
+
+enable video sharing
+-------------------------------------------
+
+
+MY blog
+IS ABOUT HELPING PEOPLE BECOME BETTER DEVELOPERS.
+THIS WILL BE DONE THROUGH SHARING MY JOURNEY AS A DEVELOPER.
+-------------------------------------------
+
+
+industry
+Technology, Education,
+-------------------------------------------
+
+create a new header partial for the blogs
+set header partial image dimensions for the static images
+-------------------------------------------
+

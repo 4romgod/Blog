@@ -1,71 +1,52 @@
 <%- include("partials/header") -%>
 <%- include("partials/heading") -%>
 
-<style>
-/******** single blog **********/
-.containter_post{
-    margin-bottom: 40px;
-}
-
-.blog-title{}
-
-.blog-date{
-    color: gray;
-    margin-bottom: 10px;
-}
-
-.blog-content{}
-
-
-/****** comment ********/
-.section-comments{
-    background-color: greenyellow;
-    display: inline-block;
-}
-
-.comment{ 
-    display: inline;
-}
-
-</style>
-
-
+<link rel="stylesheet" href="../css/blogs.css">
 <div class="myContent blog">
 
     <% if(theBlogs.length <=0){     %>
-        <h1>No Blogs Posted!</h1>
-    <%  }else{   %>     
+    <h1>No Blogs Posted!</h1>
+    <%  }else{   %>
 
     <%  theBlogs.forEach(function(blog){    %>
     <div class="containter_post">
-        <h1 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
-        <p class="blog-date"><%= blog.date %></p>
-        
-        <!-- Reduce the size of the blog text-->
-        <% if(blog.body.length>100){         %>
-        <p class="blog-content">
-            <%= blog.body.substring(0, 101) + "... " %>
-            <a href="/blogs/<%= blog.title %>">
-                Read more
-            </a>
-        </p>
-        <% }else{       %>
+        <div id="container-image">
+            <img id="blog-img" src="<%= blog.image %>" alt="">
+        </div>
 
-        <p><%= blog.body %></p>
+        <div id="container-content">
+            <h1 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
+            <p class="blog-date"><%= blog.date %></p>
 
-        <% }            %>
+            <!-- Reduce the size of the blog text-->
+            <% if(blog.body.length>200){         %>
+            <p class="blog-content">
+                <%= blog.body.substring(0, 201) + "... " %>
+                <a href="/blogs/<%= blog.title %>">
+                    Read more
+                </a>
+            </p>
+            <% }else{       %>
+
+            <p><%= blog.body %></p>
+
+            <% }            %>
+        </div>
 
         <!-- Section for Comments and Likes -->
-        <div class="section-comments mt-20">
+        <!--<div class="section-comments mt-20">
             <p class="comment">Comments</p>
             <p class="quantity">number</p>
         </div>
-        <hr>
+    -->
 
     </div>
-    <%  });     %>      <!-- end loop -->
+    <hr>
+    <%  });     %>
+    <!-- end loop -->
 
-    <% } %>     <!-- end else -->
+    <% } %>
+    <!-- end else -->
 
 </div>
 

@@ -2,30 +2,41 @@
     #container-heading {
         background: url('<%= imgHeading %>');
         background-size: cover;
+        filter: blur(3px);
+        /*transform: scale(1.1);*/
         background-position-x: center;
-        background-position-y: center;       /*move image up*/
+        background-position-y: center;
+        /*move image up*/
         box-shadow: 0px 3px 18px rgba(201, 197, 197, 0.5);
         /*background-color: #dcdde1;*/
         height: 380px;
         width: 100%;
+        box-sizing: border-box;
         position: relative;
         text-align: center;
+    }
+
+    #heading-text {
+        color: white;
+        position: absolute;
+        left: 50%;
+        top: 220px;
+        transform: translateX(-50%);
+        /*transform: translateY(-50%);*/
+        /*add value dynamically depending on picture*/
     }
 
     @media only screen and (max-width: 768px) {
         #container-heading {
             height: 210px;
         }
-    }
 
-    #heading-text{
-        color: white;
-        position: relative;
-        transform: translateY(-50%); /*add value dynamically depending on picture*/
-        top: 50%;
+        #heading-text {
+            top: 120px;
+        }
     }
 </style>
 
 <div id="container-heading">
-    <h1 id="heading-text" style="margin: 0;"><%= theHeading %></h1>
 </div>
+<h1 id="heading-text" style="margin: 0;"><%= theHeading %></h1>

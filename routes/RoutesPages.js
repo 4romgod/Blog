@@ -11,18 +11,20 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 // GET THE HOME PAGE
 router.get("/", function (req, res) {
     const heading = "Welcome to my Blog";
-    const headingImg = "../images/Kev.jpg"
+    const headingImg = "../images/boxing.jpg";
 
     res.render("home", { theContent: homeStartingContent, imgHeading: headingImg, theHeading: heading });
 });
 
+
 // GET THE ABOUT PAGE
 router.get("/about", function (req, res) {
-    const heading = "About Me";
+    const heading = "Ebenezer Mathebula";
     const headingImg = "../images/boxing.jpg";
 
     res.render("about", { theContent: aboutContent, imgHeading: headingImg, theHeading: heading });
 });
+
 
 // GET THE CONTACT PAGE
 router.get("/contact", function (req, res) {
@@ -31,6 +33,7 @@ router.get("/contact", function (req, res) {
 
     res.render("contact", { theContent: contactContent, imgHeading: headingImg, theHeading: heading });
 });
+
 
 // GET THE NEWSLETTER PAGE
 router.get("/newsletter", function (req, res) {
