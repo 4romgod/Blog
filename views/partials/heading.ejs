@@ -16,14 +16,18 @@
         text-align: center;
     }
 
-    #heading-text {
-        color: white;
+    #heading-container {
         position: absolute;
         left: 50%;
         top: 220px;
         transform: translateX(-50%);
+        text-align: center;
         /*transform: translateY(-50%);*/
         /*add value dynamically depending on picture*/
+    }
+
+    #heading-text{
+        color: white;
     }
 
     @media only screen and (max-width: 768px) {
@@ -31,7 +35,7 @@
             height: 210px;
         }
 
-        #heading-text {
+        #heading-container {
             top: 120px;
         }
     }
@@ -39,4 +43,7 @@
 
 <div id="container-heading">
 </div>
-<h1 id="heading-text" style="margin: 0;"><%= theHeading %></h1>
+
+<div id="heading-container" style="margin: 0;">
+    <h1 id="heading-text" ><%= theHeading %></h1>
+</div>

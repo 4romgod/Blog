@@ -19,19 +19,20 @@ app.set('view engine', 'ejs');
 
 
 // SETUP DATABASE
-mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(function(){
-    console.log(con);
-    con.isConnected=true;
-    console.log(con);
-    console.log("You are connected to MongoDB");
+mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
-  })
-  .catch(function(){
-    con.isConnected=false;
-    console.log("Connection error with MongoDB")
-  });
-  
+// SUCCESSFULL CONNECTION, UPDATE FLAG
+mongoose.connection.on('connected', function(){
+  console.log("Connected to mongoDB");
+  con.isConnected=true;
+})
+
+// DISCONNECTION, UPDATE FLAG
+mongoose.connection.on('disconnected', function(){
+  console.log("Connection to MongoDB is disconnected");
+  con.isConnected=false;
+});
+
 
 // REQUIRE ROUTES
 const comment = require("./routes/commentRoute");
@@ -50,9 +51,6 @@ app.use("/blogs", blog);
 
 // 404 PAGE
 app.use(function(req,res){
-
-  console.log(res.statusCode);
-
   res.status(404).render("404");
 });
 

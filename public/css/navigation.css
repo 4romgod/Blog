@@ -19,8 +19,8 @@
     color: white;
 }
 
-.navbar-nav .nav-link:hover {
-    color: blue;
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(107, 105, 105);
 }
 
 
