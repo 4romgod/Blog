@@ -2,7 +2,22 @@
 <%- include("partials/heading") -%>
 
 <style>
-    #section-my-contacts{
+    /*holds main content*/
+    .myContent {
+        padding: 50px 15%;
+    }
+
+    /* X-SMALL SCREENS */
+    @media only screen and (max-width: 370px) {
+
+        /*holds main content*/
+        .myContent {
+            padding: 50px 5%;
+        }
+    }
+
+
+    #section-my-contacts {
         margin-top: 20px;
     }
 </style>
@@ -18,7 +33,7 @@
 
             <div class="row">
 
-                <div class="col-lg-5 mt-3" style="margin-bottom: 30px;">    
+                <div class="col-lg-5 mt-3" style="margin-bottom: 30px;">
                     <!-- Section Titile -->
                     <section>
                         <h1 class="section-title">Love to Hear From You</h1>
@@ -36,7 +51,9 @@
                             <br><br>
                         </div>
                         <div class="">
-                            <b>Address:&nbsp</b><a href="https://www.google.com/maps/place/120+Kloof+St,+Gardens,+Cape+Town,+8001/@-33.93463,18.4044613,17z/data=!3m1!4b1!4m5!3m4!1s0x1dcc6774871fe36b:0x3fffc2d3ff5dc4c3!8m2!3d-33.93463!4d18.40665">120 Kloof Street, Cape Town</a>
+                            <b>Address:&nbsp</b><a
+                                href="https://www.google.com/maps/place/120+Kloof+St,+Gardens,+Cape+Town,+8001/@-33.93463,18.4044613,17z/data=!3m1!4b1!4m5!3m4!1s0x1dcc6774871fe36b:0x3fffc2d3ff5dc4c3!8m2!3d-33.93463!4d18.40665">120
+                                Kloof Street, Cape Town</a>
                             <br><br>
                         </div>
                         <div class="">
@@ -76,8 +93,8 @@
                         <!-- Message -->
                         <div class="form-group">
                             <label class="control-label">Message</label>
-                            <textarea class="form-control" rows="3" placeholder="A message" id="message" name="message" required
-                                data-error="Write your message"></textarea>
+                            <textarea class="form-control" rows="3" placeholder="A message" id="message" name="message"
+                                required data-error="Write your message"></textarea>
                             <div class=""></div>
                         </div>
                         <!-- Form Submit -->
@@ -89,7 +106,7 @@
 
                     </form>
 
-                </div>  <!-- end contact form -->
+                </div> <!-- end contact form -->
 
             </div>
 

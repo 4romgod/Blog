@@ -3,6 +3,16 @@ const router = express.Router();
 const https = require("https");
 
 
+// GET THE NEWSLETTER PAGE
+router.get("/newsletter", function (req, res) {
+    const heading = "Sign Up to my Newsletter";
+    const headingImg = "../images/newsletter.jpg";
+
+    res.render("newsletter/newsletter", { imgHeading: headingImg, theHeading: heading });
+});
+
+
+
 // POST OF SIGNIN DETAILS
 router.post("/newsletter", function (req, res) {
     const fname = req.body.fname;

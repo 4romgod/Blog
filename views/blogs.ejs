@@ -2,6 +2,7 @@
 <%- include("partials/heading") -%>
 
 <link rel="stylesheet" href="../css/blogs.css">
+
 <div class="myContent blog">
 
     <% if(theBlogs.length <=0){     %>
@@ -15,7 +16,7 @@
         </div>
 
         <div id="container-content">
-            <h1 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h1>
+            <h2 class="blog-title"><a href="/blogs/<%= blog.title %>"><%= blog.title %></a></h2>
             <p class="blog-date"><%= blog.date %></p>
 
             <!-- Reduce the size of the blog text-->

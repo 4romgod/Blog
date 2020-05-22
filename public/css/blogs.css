@@ -1,40 +1,54 @@
-    
-    /******************** single blog ***********************/
-    .containter_post {
-        display: flex;
-        margin-bottom: 50px;
+/*holds main content*/
+.myContent {
+    padding: 50px 15%;
+}
+
+/* X-SMALL SCREENS */
+@media only screen and (max-width: 370px) {
+
+    /*holds main content*/
+    .myContent {
+        padding: 50px 5%;
     }
-
-    #container-image {
-        margin-right: 15px;
-        padding-top: 10px;
-    }
-
-    #blog-img {
-        border-radius: 4px;
-        height: 150px;
-        width: 150px;
-    }
-
-    #container-content {
-        margin: 0;
-    }
-
-    .blog-title {}
-
-    .blog-date {
-        color: gray;
-        margin-bottom: 10px;
-    }
-
-    .blog-content {}
-
-    .comment {
-        display: inline;
-    }
+}
 
 
-    /* MEDIUM SCREENS */
+/******************** single blog ***********************/
+.containter_post {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#container-image {
+    margin-right: 15px;
+    padding-top: 10px;
+}
+
+#blog-img {
+    border-radius: 4px;
+    height: 150px;
+    width: 150px;
+}
+
+#container-content {
+    margin: 0;
+}
+
+.blog-title {}
+
+.blog-date {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.blog-content {}
+
+.comment {
+    display: inline;
+}
+
+
+/* MEDIUM SCREENS */
 @media only screen and (max-width: 768px) {
     #container-image {
         display: none;

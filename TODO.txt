@@ -1,4 +1,5 @@
 most recent blog goes at the top
+// reversed the list
 --------------------------------------------------------------------------------------
 
 add images to the blogs
@@ -28,4 +29,7 @@ Post request to mailchip can crash server when user is not connected to the inte
 --------------------------------------------------------------------------------------
 
 Update the state of database connection flag
+// used : mongoose.connection.on('connected', callback)
 --------------------------------------------------------------------------------------
+
+

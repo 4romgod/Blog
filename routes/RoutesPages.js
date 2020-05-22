@@ -35,15 +35,6 @@ router.get("/contact", function (req, res) {
 });
 
 
-// GET THE NEWSLETTER PAGE
-router.get("/newsletter", function (req, res) {
-    const heading = "Sign Up to my Newsletter";
-    const headingImg = "../images/newsletter.jpg";
-
-    res.render("newsletter/newsletter", { imgHeading: headingImg, theHeading: heading });
-});
-
-
 // GET PAGE TO COMPOSE A POST
 router.get("/compose", function (req, res) {
     res.render("compose");

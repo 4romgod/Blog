@@ -1,11 +1,12 @@
 //jshint esversion:6
-require("dotenv").config();
 
 // IMPORT SOME MODULES
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+
 
 // FLAG FOR THE DB CONNECTION
 const con = require("./database/connection");
@@ -21,11 +22,13 @@ app.set('view engine', 'ejs');
 // SETUP DATABASE
 mongoose.connect('mongodb://localhost:' + process.env.PORT + '/blogDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
+
 // SUCCESSFULL CONNECTION, UPDATE FLAG
 mongoose.connection.on('connected', function(){
   console.log("Connected to mongoDB");
   con.isConnected=true;
-})
+});
+
 
 // DISCONNECTION, UPDATE FLAG
 mongoose.connection.on('disconnected', function(){
@@ -40,6 +43,7 @@ const messageMe = require("./routes/messageRoute");
 const newsletter = require("./routes/newletterRoute");
 const pages = require("./routes/RoutesPages");
 const blog = require("./routes/blogRoute");
+
 
 // USE ROUTES
 app.use(pages);

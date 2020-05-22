@@ -47,7 +47,7 @@ p{
 
 .btn {
     padding: 0.8em 1.5em;
-    border-radius: 99999px;
+    border-radius: 4px;
     background-image: linear-gradient(to top, #03A9F4, #00BCD4);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2), inset 0px -2px 5px 0px rgba(0, 0, 0, 0.2);
     border: none;

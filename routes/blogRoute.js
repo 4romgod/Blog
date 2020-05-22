@@ -94,12 +94,18 @@ router.post("/compose", function (req, res) {
             else {
                 console.log("File saved successfully");
                 const blog = new Blog({
+                    author: {
+                        name: "Dave Batista",
+                        email: "batista@www.com",
+                        bio: "I am batista, and i will powerbomb you to hell"
+                    },
                     date: theDate,
                     title: req.body.blogTitle,
                     body: req.body.blogBody,
                     image: "../images/uploads/" + imageName,
                     comments: []
                 });
+
                 blog.save();
 
                 res.redirect("/blogs");

@@ -1,0 +1,238 @@
+
+/*********************************Container-Middle*****************************/
+.container-middle {
+    text-align: center;
+}
+
+
+/*---------------------- Container Profile ----------------*/
+.container-profile {
+    background-color: white;
+    padding: 50px 0 20px;
+}
+
+.container-profile-content {
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+}
+
+
+/*---------------------- Container Education ----------------*/
+#Education {
+    color: white;
+}
+
+.container-education {
+    background-image: linear-gradient(to top, #13527c, #0b92b4);
+    margin: 60px 0;
+    padding: 50px 0;
+}
+
+#carousel-education {
+    /*margin-top: 40px;*/
+}
+
+.school-name {
+    color: white;
+    margin: 10px 0;
+}
+
+.study-qualification {
+    color: #a6b1e1;
+    font-size: 20px;
+}
+
+.study-years {
+    color: #a6b1e1;
+    font-size: 17px;
+}
+
+.study-text {
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+/*---------------------- Container Skills ----------------*/
+.container-skills {
+    background-color: white;
+}
+
+.all-skills {
+    margin: 0 auto 20px auto;
+}
+
+.skill {
+    box-shadow: 0px 4px 34px -19px rgba(0, 0, 0, 0.38);
+}
+
+.skill-content {
+    text-align: left;
+    overflow: hidden;
+    /*investing more*/
+}
+
+
+/* X-SMALL SCREENS */
+@media only screen and (min-width: 0px) {
+
+    /*********************** PROFILE *************/
+    .container-profile-content {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .img-propic {
+        margin-bottom: 15px;
+        width: 90%;
+    }
+
+
+    /*********************** EDUCATION *************/
+    .study-content {
+        padding: 40px 30px 50px;
+    }
+
+
+    /************************ SKILLS ****************/
+    .all-skills {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .skill {
+        margin: 10px 0 20px;
+        padding: 20px 10px;
+    }
+
+    .skill-content {
+        padding: 0 10px 10px;
+        margin-top: 15px;
+    }
+
+    .img-skill {
+        width: 70%;
+    }
+}
+
+
+@media only screen and (min-width: 370px) {
+    .container-profile-content {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .img-propic {
+        margin-bottom: 15px;
+        width: 330px;
+    }
+
+    /*********************** EDUCATION *************/
+    .study-content {
+        padding: 40px 50px 60px;
+    }
+
+    /********************** SKILLS ****************/
+    .all-skills {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .skill {
+        margin: 10px auto 20px;
+        padding: 20px 30px;
+        width: 100%;
+    }
+
+    .img-skill {
+        width: 175px;
+    }
+
+}
+
+
+/* SMALL SCREENS 
+@media only screen and (min-width: 576px) {
+
+    .container-profile-content {
+        width: 576px;
+    }
+
+    .all-skills {
+        width: 576px;
+    }
+
+}*/
+
+
+/* MEDIUM SCREENS */
+@media only screen and (min-width: 768px) {
+
+    .container-profile-content {
+        width: 708px;
+    }
+
+    .img-propic {
+        margin-bottom: 15px;
+        width: 45%;
+    }
+
+    /*********************** EDUCATION *************/
+    .carousel-item {
+        padding: 0 70px;
+    }
+
+
+    /*********************** SKILLS ******************/
+    .all-skills {
+        width: 90%;
+    }
+
+    .skill {
+        padding: 20px 20px 50px;
+        margin: 30px auto;
+        width: 80%;
+    }
+
+    .img-skill.first,
+    .img-skill.third {
+        float: left;
+        margin-right: 30px;
+        width: 25%;
+    }
+
+    .img-skill.second,
+    .img-skill.fourth {
+        float: right;
+        margin-left: 30px;
+        width: 25%;
+    }
+
+    .skill-content {
+        padding: 0 10px 10px;
+        margin-top: 0;
+    }
+
+
+}
+
+
+/* LARGE SCREENS*/
+@media only screen and (min-width: 992px) {
+
+    .carousel-item {
+        padding: 0 100px;
+    }
+
+    .all-skills {
+        width: 100%;
+    }
+
+    .skill {
+        padding: 30px 20px 130px;
+        margin: 60px auto;
+        width: 80%;
+    }
+
+}

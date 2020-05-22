@@ -2,6 +2,20 @@
 <%- include("partials/heading") -%>
 
 <style>
+    /*holds main content*/
+    .myContent {
+        padding: 50px 15%;
+    }
+
+    /* X-SMALL SCREENS */
+    @media only screen and (max-width: 370px) {
+
+        /*holds main content*/
+        .myContent {
+            padding: 50px 5%;
+        }
+    }
+
     #section-bottom {
         margin-top: 50px;
     }
@@ -48,10 +62,8 @@
         <div class="the-author">
             <p style="font-size: 1.5rem;">About the Author:</p>
             <img class="author-img mt-10" src="../images/Kev.jpg" alt="">
-            <p class="author-name mt-10 fw-b">Ebenezer Mathebula</p>
-            <p class="author-bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus animi quos qui,
-                similique
-                maiores exercitationem possimus quas eius.</p>
+            <p class="author-name mt-10 fw-b"><%= theBlog.author.name %> </p>
+            <p class="author-bio"><%= theBlog.author.bio %> </p>
         </div>
 
         <!-- add a new comment -->
@@ -76,9 +88,14 @@
                         required data-error="Write your message"></textarea>
                 </div>
 
+                <div class="col-md-6 mt-10">
+                    <input type="checkbox" id="remember" name="remember" placeholder="Remember Me">
+                    <label for="remember">Remember Me</label>
+                </div>
+
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-lg mt-10" name="blogTitle" value="<%= theBlog.title %>"
-                        style="width: 25%;">Submit</button>
+                        style="width: 35%;">Submit</button>
                 </div>
             </form>
         </div>

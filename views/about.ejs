@@ -2,8 +2,159 @@
 <%- include("partials/heading") -%>
 
 <div class="myContent about">
-    <h1>About</h1>
-    <p><%= theContent %></p>
+    <link rel="stylesheet" href="../css/about.css">
+    <!----------------------------- CONTAINER MIDDLE---------------------------------->
+    <div class="container-middle">
+
+        <div class="container-profile">
+
+            <div class="container-profile-content">
+                <h1 id="Bio" style="margin-bottom: 50px;">Bio</h1>
+                <img class="img-propic" src="images/propic.png" alt="profile image">
+                <h2 class="profile-title">I am a programer</h2>
+            </div>
+
+        </div>
+
+
+        <div class="container-education" s>
+
+            <h1 id="Education">Education</h1>
+
+            <div id="carousel-education" class="carousel" data-ride="false">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-education" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-education" data-slide-to="1"></li>
+                    <li data-target="#carousel-education" data-slide-to="2"></li>
+                    <li data-target="#carousel-education" data-slide-to="3"></li>
+                    <li data-target="#carousel-education" data-slide-to="4"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!--RISINGA HIGH SCHOOL-->
+                        <div class="study-content">
+                            <img class="rounded-circle" src="images/risinga.png" alt="Generic placeholder image"
+                                width="140" height="140">
+                            <h2 class="school-name">Risinga High</h2>
+                            <h3 class="study-qualification">National Senior Certificate</h3>
+                            <h3 class="study-years">Graduated 2012</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+
+                        <!-- UNIVERSITY OF CAPE TOWN -->
+                        <div class="study-content">
+                            <img class="rounded-circle" src="images/uct.png" alt="Generic placeholder image" width="140"
+                                height="140">
+                            <h2 class="school-name">University Of Cape Town</h2>
+                            <h3 class="study-qualification">BBusSc in Actuarial Science</h3>
+                            <h3 class="study-years">2013 - 2015 (Incomplete)</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- CAPE PENNINSULA -->
+                        <div class="study-content">
+                            <img class="rounded-circle" src="images/cput.jpg" alt="Generic placeholder image"
+                                width="140" height="140">
+                            <h2 class="school-name">Cape Penninsula University of Technology</h2>
+                            <h3 class="study-qualification">DIP in Applications Development</h3>
+                            <h3 class="study-years">2017 - Present</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- UDEMY -->
+                        <div class="study-content">
+                            <img class="rounded-circle" src="images/udemy.png" alt="Generic placeholder image"
+                                width="140" height="140">
+                            <h2 class="school-name">Udemy</h2>
+                            <h3 class="study-qualification">Mobile Development Architecture</h3>
+                            <h3 class="study-years">Completed 2018</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- UDEMY-->
+                        <div class="study-content">
+                            <img class="rounded-circle" src="images/udemy.png" alt="Generic placeholder image"
+                                width="140" height="140">
+                            <h2 class="school-name">Udemy</h2>
+                            <h3 class="study-qualification">The Complete 2020 Web Development Bootcamp</h3>
+                            <h3 class="study-years">Completed 2020</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carousel-education" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-education" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+
+
+        </div>
+        <!--end education-->
+
+
+        <div class="container-skills">
+
+            <div class="all-skills">
+
+                <h1 id="Skills">Skills</h1>
+
+                <div class="skill first">
+                    <img class="img-skill first" src="images/android img.png" alt="">
+                    <div class="skill-content">
+                        <h2>Android Development</h2>
+                        <p>I build applications for the Android platform. I have 3 years of experience in Android
+                            Development. </p>
+                    </div>
+                </div>
+
+                <div class="skill second">
+                    <img class="img-skill second" src="images/web img.png" alt="">
+                    <div class="skill-content">
+                        <h2>Web Development</h2>
+                        <p>I build websites and web applications. I have knowledge in both frontend and backend
+                            development
+                            of websites. I love working with frontend frameworks like Bootstrap, React, and Jquery, plus
+                            backend
+                            frameworks like Express for NodeJs.</p>
+                    </div>
+
+                </div>
+
+                <div class="skill third">
+                    <img class="img-skill third" src="images/python.png" alt="">
+                    <div class="skill-content">
+                        <h2>Python Programming</h2>
+                        <p>Python is the language that introduced me to programming. I took it as a pre-requisite
+                            subject during my first year studying Actuarial Science at UCT.</p>
+                    </div>
+                </div>
+
+                <div class="skill fourth">
+                    <img class="img-skill fourth" src="images/ML.png" alt="">
+                    <div class="skill-content">
+                        <h2>Machine Learning</h2>
+                        <p>Using the Mathematical and Statistical concepts that i learned, plus my Python coding
+                            ability, I was able to entegrate these areas of knowledge together to learn Machine
+                            Learning.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--end skills-->
+
+
+    </div>
+    <!--End container-middle-->
+
 </div>
 
 <%- include("partials/footer") -%>
